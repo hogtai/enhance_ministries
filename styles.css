@@ -374,6 +374,18 @@ h3 { font-size: 1.25rem; }
     margin: 0 auto;
 }
 
+.stats-citation {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: var(--spacing-md);
+}
+
+.stats-citation a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+}
+
 @media (min-width: 768px) {
     .stats-grid {
         grid-template-columns: repeat(3, 1fr);
