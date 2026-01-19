@@ -18,6 +18,9 @@ golf.html           # Annual golf fundraiser event page
 missions.html       # Mission trips page (student and family trips)
 styles.css          # All CSS (mobile-first, CSS custom properties) - currently v=13
 assets/             # Images, logos, team photos, mission trip images
+sitemap.xml         # XML sitemap for search engines
+robots.txt          # Crawler directives for search engines and AI bots
+.github/workflows/  # GitHub Actions (SEO ping workflow)
 ```
 
 All JavaScript is inline at the bottom of each HTML file (no external JS files).
@@ -123,6 +126,53 @@ Inter font family (weights 400, 500, 600, 700)
 - Facebook: https://www.facebook.com/EnhanceMinistries
 - Instagram: https://www.instagram.com/enhanceministries/
 - (LinkedIn removed - not maintained)
+
+## SEO & Search Engine Indexing
+
+### Automated SEO Features
+The site has comprehensive SEO optimization built in:
+
+**On-Page SEO (all HTML pages):**
+- Meta description, keywords, author, robots directives
+- Canonical URLs (prevents duplicate content)
+- Open Graph meta tags (Facebook/social sharing)
+- Twitter Card meta tags
+- JSON-LD structured data (Organization, Event schemas)
+
+**Crawling & Indexing:**
+- `sitemap.xml` - Lists all pages with priorities and update frequencies
+- `robots.txt` - Allows all search engines and AI crawlers (GPTBot, Claude-Web, PerplexityBot, etc.)
+
+**GitHub Actions Workflow (`.github/workflows/seo-ping.yml`):**
+- Automatically pings Google, Bing, Yandex when content changes
+- Runs weekly on Sundays at 6 AM UTC
+- Auto-updates sitemap lastmod dates
+- Can be triggered manually from GitHub Actions tab
+
+### Manual SEO Setup Required (One-Time)
+
+**IMPORTANT:** The following manual steps are needed to complete SEO setup:
+
+1. **Google Search Console** (https://search.google.com/search-console)
+   - Add property: `https://hogtai.github.io/enhance_ministries/`
+   - Verify ownership (HTML file or DNS)
+   - Submit sitemap: `https://hogtai.github.io/enhance_ministries/sitemap.xml`
+
+2. **Bing Webmaster Tools** (https://www.bing.com/webmasters)
+   - Add site: `https://hogtai.github.io/enhance_ministries/`
+   - Verify ownership
+   - Submit sitemap: `https://hogtai.github.io/enhance_ministries/sitemap.xml`
+
+3. **Optional - Google Analytics**
+   - Create GA4 property at https://analytics.google.com
+   - Add tracking code to all HTML pages (in `<head>`)
+
+### Updating SEO When Adding Pages
+When adding a new page:
+1. Add SEO meta tags (copy pattern from existing pages)
+2. Add JSON-LD structured data if applicable
+3. Add the page to `sitemap.xml`
+4. Commit and push - the workflow will ping search engines automatically
 
 ## Deployment Notes
 

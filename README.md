@@ -65,6 +65,11 @@ enhance_ministries/
 ├── golf.html               # Golf event page
 ├── missions.html           # Mission trips page
 ├── styles.css              # All styles (responsive, currently v=13)
+├── sitemap.xml             # XML sitemap for search engines
+├── robots.txt              # Crawler directives (allows all search engines + AI bots)
+├── .github/
+│   └── workflows/
+│       └── seo-ping.yml    # Automated search engine ping workflow
 ├── assets/
 │   ├── logo.png            # Enhance Ministries logo
 │   ├── favicon.png         # Browser favicon
@@ -72,7 +77,7 @@ enhance_ministries/
 │   ├── adrianna-frelich.jpg
 │   ├── al-anderstrom.jpg
 │   ├── cj-lloyd.jpg
-│   ├── tait-hoglund.jpg
+│   ├── tait-hoglund-new.png
 │   ├── community.jpg       # Section imagery
 │   ├── hero-about.png
 │   ├── matt-family.jpg
@@ -133,6 +138,41 @@ The stylesheet includes a version parameter (`styles.css?v=13`) to ensure browse
 ### Social Media
 - **Facebook:** [facebook.com/EnhanceMinistries](https://www.facebook.com/EnhanceMinistries)
 - **Instagram:** [instagram.com/enhanceministries](https://www.instagram.com/enhanceministries/)
+
+## SEO & Search Engine Optimization
+
+The site includes comprehensive SEO features:
+
+### Automated Features (Already Configured)
+- **On-page SEO** - Meta descriptions, keywords, Open Graph tags, Twitter Cards on all pages
+- **Structured Data** - JSON-LD schemas for Organization (home) and Events (golf, missions)
+- **Sitemap** - `sitemap.xml` lists all pages with priorities
+- **Robots.txt** - Allows all search engines and AI crawlers (Google, Bing, GPTBot, Claude-Web, PerplexityBot)
+- **GitHub Actions** - Automatically pings search engines on content changes and weekly
+
+### Manual Setup Required (One-Time)
+
+To complete SEO setup and accelerate indexing, these manual steps are needed:
+
+1. **Google Search Console**
+   - Go to: https://search.google.com/search-console
+   - Add property: `https://hogtai.github.io/enhance_ministries/`
+   - Verify ownership (HTML file upload or DNS TXT record)
+   - Submit sitemap URL: `https://hogtai.github.io/enhance_ministries/sitemap.xml`
+
+2. **Bing Webmaster Tools**
+   - Go to: https://www.bing.com/webmasters
+   - Add site: `https://hogtai.github.io/enhance_ministries/`
+   - Verify ownership
+   - Submit sitemap URL: `https://hogtai.github.io/enhance_ministries/sitemap.xml`
+
+3. **Optional: Google Analytics**
+   - Create GA4 property at https://analytics.google.com
+   - Add tracking code to `<head>` section of all HTML files
+
+### Checking Indexing Status
+- Google: Search `site:hogtai.github.io/enhance_ministries`
+- Bing: Search `site:hogtai.github.io/enhance_ministries`
 
 ## Leadership Team
 
