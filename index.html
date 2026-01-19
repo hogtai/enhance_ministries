@@ -506,8 +506,15 @@
             const interest = document.getElementById('interest').value;
 
             const subject = encodeURIComponent(`Contact from ${name} - ${interest}`);
+            const mailtoUrl = `mailto:info@enhancemin.com?subject=${subject}`;
 
-            window.location.href = `mailto:info@enhancemin.com?subject=${subject}`;
+            // Create a temporary link and click it for better cross-browser mailto support
+            const link = document.createElement('a');
+            link.href = mailtoUrl;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
 
             formStatus.className = 'form-status success';
             formStatus.textContent = 'Opening your email client... If it doesn\'t open, please email info@enhancemin.com directly.';
