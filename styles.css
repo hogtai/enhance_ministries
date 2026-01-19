@@ -836,16 +836,18 @@ h3 { font-size: 1.25rem; }
 /* Team Carousel */
 .team-carousel-wrapper {
     position: relative;
+    margin: 0 calc(-1 * var(--spacing-md));
+    padding: 0 var(--spacing-md);
 }
 
 .team-carousel {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-sm) var(--spacing-md);
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -855,8 +857,9 @@ h3 { font-size: 1.25rem; }
 }
 
 .team-card {
-    flex: 0 0 calc(100% - var(--spacing-lg));
-    scroll-snap-align: center;
+    flex: 0 0 280px;
+    min-width: 280px;
+    scroll-snap-align: start;
     background-color: var(--color-white);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -901,15 +904,14 @@ h3 { font-size: 1.25rem; }
     opacity: 0.7;
 }
 
-@media (min-width: 768px) {
-    .team-card {
-        flex: 0 0 calc(50% - var(--spacing-lg));
-    }
-}
-
 @media (min-width: 1024px) {
+    .team-carousel {
+        justify-content: center;
+    }
+
     .team-card {
-        flex: 0 0 calc(25% - var(--spacing-lg));
+        flex: 0 0 calc(25% - var(--spacing-md));
+        min-width: 200px;
     }
 
     .carousel-hint {
