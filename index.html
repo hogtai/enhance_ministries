@@ -9,7 +9,7 @@
     <meta name="description" content="Enhance Ministries provides coaching, consulting, and care to Pastors for life-long ministry.">
     <title>Enhance Ministries | Healthy Pastors Leading Thriving Churches</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,13 @@
             <ul class="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="golf.html">Golf Event</a></li>
+                <li class="nav-dropdown">
+                    <a href="events.html" class="dropdown-toggle">Events</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="golf.html">Golf Event</a></li>
+                        <li><a href="missions.html">Mission Trips</a></li>
+                    </ul>
+                </li>
                 <li><a href="#pastors">For Pastors</a></li>
                 <li><a href="#board">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -203,34 +209,37 @@
     <!-- Fixed Mobile Donate Button -->
     <button class="mobile-donate-btn" id="mobile-donate-btn">Donate</button>
 
-    <!-- Golf Fundraiser Section -->
-    <section id="golf" class="section">
+    <!-- Ways to Partner Section -->
+    <section id="events" class="section">
         <div class="container">
-            <div class="two-column">
-                <div class="column-content">
+            <div class="section-header">
+                <h2>Ways to Partner</h2>
+                <p class="section-subtitle">Join us in supporting pastors and advancing the Kingdom through our annual events.</p>
+            </div>
+            <div class="partner-cards">
+                <div class="partner-card">
+                    <div class="partner-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"></circle><path d="M12 15V3l7 4-7 4"></path></svg>
+                    </div>
                     <span class="event-badge">Annual Fundraiser</span>
-                    <h2>2026 Golf Event</h2>
-                    <p class="event-date">July 20, 2026 · Pheasant Hills Golf Course, Hammond, WI</p>
-                    <p>Join us for a beautiful day of golf in support of Enhance Ministries' work with pastors and their churches. Great golf, great fellowship, great cause.</p>
-                    <ul class="event-details">
-                        <li><strong>11:30 am</strong> – Check-in, driving range & lunch</li>
-                        <li><strong>1:00 pm</strong> – Shotgun start</li>
-                        <li><strong>6:30 pm</strong> – Awards & dinner</li>
-                    </ul>
-                    <p class="event-includes">Includes 18 holes, cart, lunch, dinner & prizes</p>
-                    <div class="event-cta">
-                        <a href="golf.html" class="btn btn-primary">Register Your Team</a>
-                        <a href="golf.html#sponsorship" class="btn btn-outline">Sponsorship Info</a>
-                    </div>
+                    <h3>2026 Golf Event</h3>
+                    <p class="partner-card-date">July 20, 2026 · Hammond, WI</p>
+                    <p>A beautiful day of golf supporting Enhance Ministries' work with pastors. Great golf, great fellowship, great cause.</p>
+                    <a href="golf.html" class="btn btn-primary">Learn More</a>
                 </div>
-                <div class="column-image">
-                    <div class="golf-card">
-                        <div class="golf-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"></circle><path d="M12 15V3l7 4-7 4"></path></svg>
-                        </div>
-                        <p class="golf-tagline">Our primary fundraiser supporting pastoral care across the country</p>
+                <div class="partner-card">
+                    <div class="partner-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     </div>
+                    <span class="event-badge">Summer 2026</span>
+                    <h3>Mission Trips</h3>
+                    <p class="partner-card-date">Student: July 6-11 · Family: July 14-18</p>
+                    <p>Experience God's transformative work serving ministry partners in the Twin Cities. Trips for students and families.</p>
+                    <a href="missions.html" class="btn btn-primary">Learn More</a>
                 </div>
+            </div>
+            <div class="partner-cta">
+                <a href="events.html" class="btn btn-outline">View All Events</a>
             </div>
         </div>
     </section>
