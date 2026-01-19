@@ -462,8 +462,10 @@ h3 { font-size: 1.25rem; }
     opacity: 0.95;
 }
 
-.cta-content .btn {
-    margin: var(--spacing-lg) 0;
+.cta-content > .btn {
+    display: block;
+    margin: var(--spacing-xl) auto;
+    width: fit-content;
 }
 
 .donate-options {
