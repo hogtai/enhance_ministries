@@ -474,6 +474,7 @@ h3 { font-size: 1.25rem; }
 .donate-note {
     font-size: 0.875rem;
     opacity: 0.8;
+    margin-top: var(--spacing-lg);
 }
 
 @media (min-width: 768px) {
@@ -1116,10 +1117,19 @@ h3 { font-size: 1.25rem; }
     border-radius: var(--border-radius);
     width: 100%;
     max-width: 500px;
-    height: 80vh;
-    max-height: 700px;
+    height: 85vh;
+    max-height: 800px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        max-width: 550px;
+        height: 90vh;
+        max-height: 850px;
+    }
 }
 
 .modal-close {
