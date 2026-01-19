@@ -192,6 +192,12 @@ h3 { font-size: 1.25rem; }
 .nav-logo img {
     height: 40px;
     width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter var(--transition);
+}
+
+.nav.scrolled .nav-logo img {
+    filter: none;
 }
 
 .nav-menu {
@@ -237,8 +243,12 @@ h3 { font-size: 1.25rem; }
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-text);
+    background-color: var(--color-white);
     transition: all var(--transition);
+}
+
+.nav.scrolled .nav-toggle span {
+    background-color: var(--color-text);
 }
 
 .nav-toggle.active span:nth-child(1) {
