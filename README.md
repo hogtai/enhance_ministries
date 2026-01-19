@@ -6,7 +6,7 @@ A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit orga
 
 ## Vision & Mission
 
-- **Vision:** Healthy Pastors Leading Thriving Churches
+- **Vision:** Providing coaching, consulting, and care to pastors for life-long ministry
 - **Mission:** Providing coaching, consulting, and care to pastors for life-long ministry.
 
 ## Features
