@@ -30,7 +30,7 @@
                 <li><a href="#pastors">For Pastors</a></li>
                 <li><a href="#board">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#donate" class="btn btn-primary btn-sm">Donate</a></li>
+                <li><button class="btn btn-primary btn-sm nav-donate-btn">Donate</button></li>
             </ul>
         </div>
     </nav>
@@ -112,14 +112,23 @@
             <div class="cta-content">
                 <h2>Partner With Us</h2>
                 <p>Your generosity directly impacts pastors and their families. Every gift helps us provide coaching, resources, and care to those shepherding our churches.</p>
-                <div class="donate-options">
-                    <a href="#" class="btn btn-white btn-lg">Give Monthly</a>
-                    <a href="#" class="btn btn-outline-white btn-lg">One-Time Gift</a>
-                </div>
+                <button class="btn btn-white btn-lg" id="open-donate-modal">Give</button>
                 <p class="donate-note">Enhance Ministries is a registered 501(c)(3) nonprofit. All donations are tax-deductible.</p>
             </div>
         </div>
     </section>
+
+    <!-- Donate Modal -->
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <iframe
+                title="Donation form powered by Zeffy"
+                src="https://www.zeffy.com/embed/donation-form/partner-with-us-to-see-fruitful-ministries-and-healthy-leaders"
+                style="border: 0; width: 100%; height: 100%;">
+            </iframe>
+        </div>
+    </div>
 
     <!-- Golf Fundraiser Section -->
     <section id="golf" class="section">
@@ -337,6 +346,34 @@
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
+            }
+        });
+
+        // Donate modal
+        const donateModal = document.getElementById('donate-modal');
+        const openDonateBtn = document.getElementById('open-donate-modal');
+        const navDonateBtn = document.querySelector('.nav-donate-btn');
+        const closeModalBtn = document.querySelector('.modal-close');
+
+        const openModal = () => {
+            donateModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        };
+
+        openDonateBtn.addEventListener('click', openModal);
+        navDonateBtn.addEventListener('click', openModal);
+
+        closeModalBtn.addEventListener('click', () => {
+            donateModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        donateModal.addEventListener('click', (e) => {
+            if (e.target === donateModal) {
+                donateModal.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     </script>
