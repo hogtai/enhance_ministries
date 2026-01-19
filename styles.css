@@ -196,7 +196,8 @@ h3 { font-size: 1.25rem; }
     transition: filter var(--transition);
 }
 
-.nav.scrolled .nav-logo img {
+.nav.scrolled .nav-logo img,
+.nav-solid .nav-logo img {
     filter: none;
 }
 
@@ -247,7 +248,8 @@ h3 { font-size: 1.25rem; }
     transition: all var(--transition);
 }
 
-.nav.scrolled .nav-toggle span {
+.nav.scrolled .nav-toggle span,
+.nav-solid .nav-toggle span {
     background-color: var(--color-text);
 }
 
