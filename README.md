@@ -24,7 +24,7 @@ A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit orga
 
 ### Events Hub (`events.html`)
 - Overview of all ministry events
-- Links to Golf Event and Mission Trips pages
+- Links to Golf Event and Mission Experiences pages
 - Impact section explaining how participation supports the ministry
 
 ### Golf Event Page (`golf.html`)
@@ -34,7 +34,7 @@ A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit orga
 - FAQ section
 - Location with Google Maps link
 
-### Mission Trips Page (`missions.html`)
+### Mission Experiences Page (`missions.html`)
 - Student Mission Trip (July 6-11, 2026)
 - Family Mission Trip (July 14-18, 2026)
 - Jotform registration embed for student trip
@@ -63,7 +63,7 @@ enhance_ministries/
 ├── index.html              # Main landing page
 ├── events.html             # Events hub page
 ├── golf.html               # Golf event page
-├── missions.html           # Mission trips page
+├── missions.html           # Mission Experiences page
 ├── styles.css              # All styles (responsive, currently v=13)
 ├── sitemap.xml             # XML sitemap for search engines
 ├── robots.txt              # Crawler directives (allows all search engines + AI bots)

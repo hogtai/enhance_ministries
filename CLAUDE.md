@@ -15,8 +15,8 @@ Static website for Enhance Ministries, a 501(c)(3) nonprofit providing pastoral 
 index.html          # Main landing page (hero, stats, services, testimonials, team, contact)
 events.html         # Events hub page (links to golf and missions)
 golf.html           # Annual golf fundraiser event page
-missions.html       # Mission trips page (student and family trips)
-styles.css          # All CSS (mobile-first, CSS custom properties) - currently v=13
+missions.html       # Mission Experiences page (student and family trips)
+styles.css          # All CSS (mobile-first, CSS custom properties) - currently v=14
 assets/             # Images, logos, team photos, mission trip images
 sitemap.xml         # XML sitemap for search engines
 robots.txt          # Crawler directives for search engines and AI bots
@@ -29,11 +29,11 @@ All JavaScript is inline at the bottom of each HTML file (no external JS files).
 
 ```bash
 # Cache busting: increment version in ALL 4 HTML files when updating CSS
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 
 # Verify deployment
 curl -s "https://hogtai.github.io/enhance_ministries/" | grep "search-term"
-curl -s "https://hogtai.github.io/enhance_ministries/styles.css?v=13" | grep "css-rule"
+curl -s "https://hogtai.github.io/enhance_ministries/styles.css?v=14" | grep "css-rule"
 
 # Deploy
 git add . && git commit -m "message" && git push origin main

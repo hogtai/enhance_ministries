@@ -64,7 +64,7 @@
         "nonprofitStatus": "Nonprofit501c3"
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=13">
+    <link rel="stylesheet" href="styles.css?v=14">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@
                     <a href="events.html" class="dropdown-toggle">Events</a>
                     <ul class="dropdown-menu">
                         <li><a href="golf.html">Golf Event</a></li>
-                        <li><a href="missions.html">Mission Trips</a></li>
+                        <li><a href="missions.html">Mission Experiences</a></li>
                     </ul>
                 </li>
                 <li><a href="#pastors">For Pastors</a></li>
@@ -148,28 +148,47 @@
                 <h2>How We Help</h2>
                 <p class="section-subtitle">Enhance Ministries exists to change these statistics. We come alongside pastors with personalized coaching, practical consulting, and genuine care so they can lead healthy, fruitful ministries for the long haul.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <div class="services-carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&larr;</button>
+                <div class="services-carousel">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>Coaching</h3>
+                        <p>One-on-one coaching and cohort experiences that provide encouragement, accountability, and practical tools for personal and ministry growth.</p>
                     </div>
-                    <h3>Coaching</h3>
-                    <p>One-on-one coaching relationships that provide encouragement, accountability, and practical tools for personal and ministry growth.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3>Church Consulting</h3>
+                        <p>Strategic guidance for church boards and ministry staff navigating organizational challenges. We help leadership teams develop healthy systems, clarify vision, and strengthen church governance.</p>
                     </div>
-                    <h3>Consulting</h3>
-                    <p>Strategic ministry consulting to help churches navigate challenges, develop systems, and maximize their Kingdom impact in their communities.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3>Care Events</h3>
+                        <p>Intentional gatherings designed to refresh and restore pastors and their families. Through retreats, connection events, and pastoral care moments, we create space for rest and renewal.</p>
                     </div>
-                    <h3>Care</h3>
-                    <p>Genuine pastoral care for pastors and their families through retreats, check-ins, and a community that understands the unique challenges of ministry.</p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <h3>Mission Trips</h3>
+                        <p>Engaging students, families, and churches in hands-on Kingdom work. From student missions to family experiences, we connect you with ministry partners in the Twin Cities for life-changing service opportunities.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        </div>
+                        <h3>Speaking & Training</h3>
+                        <p>Equipping conferences, retreats, and workshops led by experienced ministry leaders. We bring practical teaching on leadership development, pastoral health, and Kingdom-minded living to your church or event.</p>
+                    </div>
                 </div>
+                <button class="carousel-btn carousel-btn-next" aria-label="Next">&rarr;</button>
+                <div class="carousel-hint">Swipe to see more</div>
             </div>
         </div>
     </section>
@@ -288,7 +307,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     </div>
                     <span class="event-badge">Summer 2026</span>
-                    <h3>Mission Trips</h3>
+                    <h3>Mission Experiences</h3>
                     <p class="partner-card-date">Student: July 6-11 · Family: July 14-18</p>
                     <p>Experience God's transformative work serving ministry partners in the Twin Cities. Trips for students and families.</p>
                     <a href="missions.html" class="btn btn-primary">Learn More</a>
@@ -529,8 +548,8 @@
         });
 
         // Carousel navigation - handles multiple carousels
-        document.querySelectorAll('.team-carousel-wrapper, .testimonial-carousel-wrapper').forEach(wrapper => {
-            const carousel = wrapper.querySelector('.team-carousel, .testimonial-carousel');
+        document.querySelectorAll('.team-carousel-wrapper, .testimonial-carousel-wrapper, .services-carousel-wrapper').forEach(wrapper => {
+            const carousel = wrapper.querySelector('.team-carousel, .testimonial-carousel, .services-carousel');
             const prevBtn = wrapper.querySelector('.carousel-btn-prev');
             const nextBtn = wrapper.querySelector('.carousel-btn-next');
 
