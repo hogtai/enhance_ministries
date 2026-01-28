@@ -3,7 +3,8 @@
     "allow": [
       "Bash(gh run list:*)",
       "Bash(python:*)",
-      "WebFetch(domain:enhancemin.com)"
+      "WebFetch(domain:enhancemin.com)",
+      "Bash(grep:*)"
     ]
   }
 }
