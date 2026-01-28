@@ -1335,6 +1335,27 @@ h3 { font-size: 1.25rem; }
     }
 }
 
+/* Sponsorship tier color variations */
+.sponsorship-card.sponsorship-lunch {
+    background: #FFFDE7;
+    border-left: 4px solid #FDD835;
+}
+
+.sponsorship-card.sponsorship-gold {
+    background: #FFF8E1;
+    border-left: 4px solid #FFD54F;
+}
+
+.sponsorship-card.sponsorship-silver {
+    background: #F5F5F5;
+    border-left: 4px solid #BDBDBD;
+}
+
+.sponsorship-card.sponsorship-hole {
+    background: #E8F5E9;
+    border-left: 4px solid #81C784;
+}
+
 .sponsorship-card h3 {
     font-size: 1rem;
     margin-bottom: var(--spacing-xs);
