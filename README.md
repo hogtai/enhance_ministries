@@ -14,7 +14,7 @@ A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit orga
 ### Home Page (`index.html`)
 - **Hero Section** - Vision statement with call-to-action buttons
 - **Why Enhance Ministries** - Statistics about pastoral challenges with Barna Research citations
-- **How We Help** - Three service pillars: Coaching, Consulting, and Care
+- **How Enhance Ministries Helps Ministry Leaders and Churches** - Three service pillars: Coaching, Consulting, and Care
 - **Testimonials Carousel** - Testimonials from pastors and ministry leaders
 - **Partner With Us** - Donation section with Zeffy integration modal
 - **Golf Event Promotion** - Annual fundraiser highlight
