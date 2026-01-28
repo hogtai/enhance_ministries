@@ -1,13 +1,13 @@
 # Enhance Ministries Website
 
-A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit organization dedicated to providing coaching, consulting, and care to pastors for life-long ministry.
+A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit organization dedicated to Cultivating Healthy Leaders and Fruitful Ministries.
 
 **Live Site:** [https://hogtai.github.io/enhance_ministries/](https://hogtai.github.io/enhance_ministries/)
 
 ## Vision & Mission
 
-- **Vision:** Providing coaching, consulting, and care to pastors for life-long ministry
-- **Mission:** Providing coaching, consulting, and care to pastors for life-long ministry.
+- **Vision:** Cultivating Healthy Leaders and Fruitful Ministries
+- **Mission:** Cultivating Healthy Leaders and Fruitful Ministries.
 
 ## Pages
 
