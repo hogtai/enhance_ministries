@@ -207,7 +207,12 @@ h3 { font-size: 1.25rem; }
     height: 40px;
     width: auto;
     filter: brightness(0) invert(1);
-    transition: filter var(--transition);
+    transition: filter var(--transition), transform var(--transition), opacity var(--transition);
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05);
+    opacity: 0.85;
 }
 
 .nav.scrolled .nav-logo img,
