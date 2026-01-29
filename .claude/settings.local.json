@@ -4,7 +4,8 @@
       "Bash(gh run list:*)",
       "Bash(python:*)",
       "WebFetch(domain:enhancemin.com)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "WebFetch(domain:www.instagram.com)"
     ]
   }
 }
