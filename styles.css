@@ -475,6 +475,10 @@ h3 { font-size: 1.25rem; }
     color: var(--color-text-light);
 }
 
+.service-card .btn {
+    margin-top: auto;
+}
+
 @media (min-width: 768px) {
     .services-grid {
         grid-template-columns: repeat(3, 1fr);
