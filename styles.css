@@ -296,10 +296,12 @@ h3 { font-size: 1.25rem; }
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.7) 0%, rgba(255, 81, 0, 0.75) 100%),
+                url('assets/hero-mountain.jpg') center center / cover no-repeat;
     color: var(--color-white);
     padding: var(--spacing-2xl) var(--spacing-md);
     padding-top: calc(var(--spacing-2xl) + 60px);
+    position: relative;
 }
 
 .hero-vision {
