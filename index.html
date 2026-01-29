@@ -399,8 +399,8 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p class="section-subtitle">Ready to start a conversation? We'd love to hear from you.</p>
+                <h2>Connect with Matt Directly</h2>
+                <p class="section-subtitle">Fill out with basic information and Matt will follow up with you.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
@@ -442,12 +442,12 @@
                             <option value="booking Matt to train my team">booking Matt to train my team</option>
                             <option value="becoming a donor of Enhance Ministries">becoming a donor of Enhance Ministries</option>
                             <option value="the golf event">the golf event</option>
-                            <option value="Other">Other</option>
+                            <option value="Other (specify below)">Other (specify below)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="form-group" id="message-group" style="display: none;">
+                        <label for="message">Please describe your inquiry</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send Message to Matt</button>
                     <div id="form-status" class="form-status"></div>
@@ -570,6 +570,22 @@
             }
         });
 
+        // Show/hide message field based on interest selection
+        const interestSelect = document.getElementById('interest');
+        const messageGroup = document.getElementById('message-group');
+        const messageTextarea = document.getElementById('message');
+
+        interestSelect.addEventListener('change', function() {
+            if (this.value === 'Other (specify below)') {
+                messageGroup.style.display = 'block';
+                messageTextarea.required = true;
+            } else {
+                messageGroup.style.display = 'none';
+                messageTextarea.required = false;
+                messageTextarea.value = '';
+            }
+        });
+
         // Contact form submission - opens email client with form data
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
@@ -579,9 +595,16 @@
 
             const name = document.getElementById('name').value;
             const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
 
-            const subject = encodeURIComponent(`Contact from ${name} - ${interest}`);
-            const mailtoUrl = `mailto:info@enhancemin.com?subject=${subject}`;
+            let subject = encodeURIComponent(`Contact from ${name} - ${interest}`);
+            let mailtoUrl = `mailto:info@enhancemin.com?subject=${subject}`;
+
+            // Add message body if there's a message
+            if (message.trim()) {
+                const body = encodeURIComponent(`Message from ${name}:\n\n${message}`);
+                mailtoUrl += `&body=${body}`;
+            }
 
             // Create a temporary link and click it for better cross-browser mailto support
             const link = document.createElement('a');
