@@ -18,7 +18,10 @@ speaking_training.html  # Speaking & Training services page
 events.html             # Events hub page (links to golf and missions)
 golf.html               # Annual golf fundraiser event page
 missions.html           # Mission Experiences page (student and family trips)
-styles.css              # All CSS (mobile-first, CSS custom properties) - currently v=26
+book.html               # Matt's Book - "What You Would Have Learned in Sunday School"
+media.html              # Media page (messages, podcasts, articles)
+partners.html           # Ministry Partners page
+styles.css              # All CSS (mobile-first, CSS custom properties) - currently v=27
 assets/                 # Images, logos, team photos, mission trip images
 sitemap.xml             # XML sitemap for search engines
 robots.txt              # Crawler directives for search engines and AI bots
@@ -30,8 +33,8 @@ All JavaScript is inline at the bottom of each HTML file (no external JS files).
 ## Development Commands
 
 ```bash
-# Cache busting: increment version in ALL 6 HTML files when updating CSS
-<link rel="stylesheet" href="styles.css?v=26">
+# Cache busting: increment version in ALL 9 HTML files when updating CSS
+<link rel="stylesheet" href="styles.css?v=27">
 
 # Verify deployment
 curl -s "https://hogtai.github.io/enhance_ministries/" | grep "search-term"
@@ -103,11 +106,11 @@ Alternate between white and light gray using `.section-alt`:
 Add `testimonial-card` with `.testimonial-quote`, `.testimonial-author`, `.testimonial-role`
 
 ### Updating Navigation
-Must update nav in **all 6 HTML files**: `index.html`, `coaching.html`, `speaking_training.html`, `events.html`, `golf.html`, `missions.html`
+Must update nav in **all 9 HTML files**: `index.html`, `coaching.html`, `speaking_training.html`, `events.html`, `golf.html`, `missions.html`
 
 ### Updating CSS
 1. Make changes in `styles.css`
-2. Increment version parameter in all 6 HTML files: `styles.css?v=26`
+2. Increment version parameter in all 9 HTML files: `styles.css?v=27`
 3. Commit, push, and verify deployment
 
 ## External Integrations
@@ -210,7 +213,7 @@ When adding a new page:
 ## Deployment Notes
 
 - GitHub Pages deploys automatically from `main` branch (typically 10-15 seconds)
-- Always increment `styles.css?v=X` in **all 6 HTML files** when changing CSS
+- Always increment `styles.css?v=X` in **all 9 HTML files** when changing CSS
 - Verify deployment with curl before confirming changes complete
 
 ---
@@ -339,7 +342,7 @@ This website can be easily maintained using Claude Code, Anthropic's AI coding a
 
 ### Important Reminders
 
-1. **CSS Changes**: When Claude updates `styles.css`, ensure it also increments the version in all 6 HTML files
+1. **CSS Changes**: When Claude updates `styles.css`, ensure it also increments the version in all 9 HTML files
 
 2. **Navigation**: Any nav changes must be applied to all 4 pages
 
