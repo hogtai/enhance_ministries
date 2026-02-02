@@ -1284,7 +1284,8 @@ h3 { font-size: 1.25rem; }
 
 .footer-logo {
     height: 30px;
-    margin-bottom: var(--spacing-sm);
+    margin: 0 auto var(--spacing-sm);
+    display: block;
     filter: brightness(0) invert(1);
 }
 
