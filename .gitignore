@@ -5,8 +5,9 @@ package-lock.json
 # Original unoptimized images (backed up during optimization)
 assets/originals/
 
-# Optimization script (not needed in production)
+# Optimization scripts (not needed in production)
 optimize-images.js
+convert-to-webp.js
 
 # OS files
 .DS_Store
