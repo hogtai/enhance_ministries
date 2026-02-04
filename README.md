@@ -4,96 +4,117 @@ A modern, responsive website for Enhance Ministries - a 501(c)(3) nonprofit orga
 
 **Live Site:** [https://hogtai.github.io/enhance_ministries/](https://hogtai.github.io/enhance_ministries/)
 
-## Vision & Mission
-
-- **Vision:** Cultivating Healthy Leaders and Fruitful Ministries
-- **Mission:** Cultivating Healthy Leaders and Fruitful Ministries.
-
-## Pages
-
-### Home Page (`index.html`)
-- **Hero Section** - Vision statement with call-to-action buttons
-- **Why Enhance Ministries** - Statistics about pastoral challenges with Barna Research citations
-- **How Enhance Ministries Helps Ministry Leaders and Churches** - Three service pillars: Coaching, Consulting, and Care
-- **Testimonials Carousel** - Testimonials from pastors and ministry leaders
-- **Partner With Us** - Donation section with Zeffy integration modal
-- **Golf Event Promotion** - Annual fundraiser highlight
-- **For Pastors** - Direct outreach to pastoral audience
-- **Leadership Section** - Team carousel with photos and roles
-- **Contact Section** - Email form (mailto), phone, and location information
-
-### Events Hub (`events.html`)
-- Overview of all ministry events
-- Links to Golf Event and Mission Experiences pages
-- Impact section explaining how participation supports the ministry
-
-### Golf Event Page (`golf.html`)
-- Event details and schedule for annual fundraiser
-- Zeffy registration form embed
-- Sponsorship opportunities with tier descriptions
-- FAQ section
-- Location with Google Maps link
-
-### Mission Experiences Page (`missions.html`)
-- Student Mission Trip (July 6-11, 2026)
-- Family Mission Trip (July 14-18, 2026)
-- Jotform registration embed for student trip
-- Partnership with Twin Cities ministry organizations
-
-### Interactive Elements
-- **Responsive Navigation** - Hamburger menu on mobile, full menu on desktop with Events dropdown
-- **Carousels** - Touch-swipe on mobile, arrow navigation on desktop
-- **Donation Modal** - Popup with embedded Zeffy donation form (available on all pages)
-- **Fixed Mobile Donate Button** - Persistent donate button on mobile devices
-- **Smooth Scrolling** - Anchor link navigation
-
 ## Tech Stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom properties, Flexbox, Grid, scroll-snap
+- **Eleventy (11ty)** - Static site generator with Nunjucks templates
+- **HTML5/CSS3** - Semantic markup, custom properties, Flexbox, Grid
 - **Vanilla JavaScript** - No frameworks or dependencies
+- **GitHub Actions** - Automated build and deployment
 - **Google Fonts** - Inter font family
-- **Zeffy** - Donation and golf registration forms
+- **Zeffy** - Donation and event registration forms
 - **Jotform** - Mission trip registration
 
-## File Structure
+## Project Structure
 
 ```
 enhance_ministries/
-├── index.html              # Main landing page
-├── coaching.html           # Coaching & Consulting services
-├── speaking_training.html  # Speaking & Training services
-├── events.html             # Events hub page
-├── golf.html               # Golf event page
-├── missions.html           # Mission Experiences page
-├── book.html               # Matt's Book page
-├── media.html              # Media (messages, podcasts, articles)
-├── partners.html           # Ministry Partners page
-├── styles.css              # All styles (responsive, currently v=33)
-├── sitemap.xml             # XML sitemap for search engines
-├── robots.txt              # Crawler directives (allows all search engines + AI bots)
-├── .github/
-│   └── workflows/
-│       └── seo-ping.yml    # Automated search engine ping workflow
-├── docs/
-│   └── CLOUDFLARE_SETUP.md # Guide for adding Cloudflare security headers
-├── assets/
-│   ├── logo.png            # Enhance Ministries logo
-│   ├── favicon.png         # Browser favicon
-│   ├── matt-headshot.jpeg  # Team photos
-│   ├── adrianna-frelich.jpg
-│   ├── al-anderstrom.jpg
-│   ├── cj-lloyd.jpg
-│   ├── tait-hoglund-new.png
-│   ├── community.jpg       # Section imagery
-│   ├── hero-about.png
-│   ├── matt-family.jpg
-│   ├── student-missions-logo.png  # Mission trip branding
-│   ├── mission-trip-group.jpg     # Mission trip photos
-│   └── mission-trip-activity.jpg
-├── README.md               # This file
-└── CLAUDE.md               # Claude Code instructions & maintenance guide
+├── .eleventy.js              # Eleventy configuration
+├── package.json              # Node.js dependencies
+├── .github/workflows/
+│   ├── deploy.yml            # Build & deploy to GitHub Pages
+│   └── seo-ping.yml          # SEO sitemap ping workflow
+│
+├── src/                      # Source files
+│   ├── _includes/
+│   │   ├── layouts/
+│   │   │   └── base.njk      # Base HTML template
+│   │   └── components/
+│   │       ├── nav.njk       # Navigation component
+│   │       ├── footer.njk    # Footer component
+│   │       ├── donate-modal.njk
+│   │       └── scripts/      # JavaScript components
+│   │
+│   ├── _data/
+│   │   ├── site.json         # Site config (name, URL, CSS version)
+│   │   ├── navigation.json   # Nav menu structure
+│   │   ├── team.json         # Leadership team members
+│   │   └── testimonials.json # Testimonial quotes
+│   │
+│   ├── pages/                # Page templates
+│   │   ├── index.njk         # Homepage
+│   │   ├── coaching.njk      # Coaching for Pastors
+│   │   ├── speaking_training.njk
+│   │   ├── events.njk        # Events hub
+│   │   ├── golf.njk          # Golf Event
+│   │   ├── missions.njk      # Mission Experiences
+│   │   ├── book.njk          # Matt's Book
+│   │   ├── media.njk         # Media page
+│   │   └── partners.njk      # Ministry Partners
+│   │
+│   ├── assets/               # Images
+│   ├── styles.css            # All CSS
+│   ├── sitemap.xml           # SEO sitemap
+│   └── robots.txt            # Crawler directives
+│
+├── _site/                    # Build output (gitignored)
+├── CLAUDE.md                 # Claude Code maintenance guide
+└── README.md                 # This file
 ```
+
+## Development
+
+### Prerequisites
+- Node.js (v18+)
+- npm
+
+### Setup
+```bash
+# Install dependencies
+npm install
+
+# Start development server with live reload
+npm run serve
+
+# Build for production
+npm run build
+```
+
+### Deployment
+Push to `main` branch triggers automated deployment via GitHub Actions:
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+The site is built with Eleventy and deployed to GitHub Pages automatically.
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| **Home** | Hero, statistics, services, testimonials, team, contact form |
+| **Coaching** | Coaching & consulting services for pastors |
+| **Speaking & Training** | Speaking engagement information |
+| **Events** | Events hub linking to Golf and Missions |
+| **Golf Event** | Annual fundraiser with Zeffy registration |
+| **Mission Experiences** | Student and family mission trips |
+| **Book** | Matt's Book - "What You Would Have Learned in Sunday School" |
+| **Media** | Messages, podcasts, and articles |
+| **Partners** | Ministry partner organizations |
+
+## Content Updates
+
+Content is managed through JSON data files in `src/_data/`:
+
+| File | Content |
+|------|---------|
+| `site.json` | Site name, URL, tagline, CSS version |
+| `navigation.json` | Menu structure and links |
+| `team.json` | Leadership team members |
+| `testimonials.json` | Testimonial quotes |
+
+See [CLAUDE.md](CLAUDE.md) for detailed maintenance instructions.
 
 ## Brand Colors
 
@@ -102,154 +123,28 @@ enhance_ministries/
 | Primary Orange | `#FF7A3D` | Buttons, accents, links |
 | Primary Dark | `#FF5100` | Hover states, gradients |
 | Dark Text | `#1E1810` | Headings, body text |
-| Light Text | `#6B6560` | Secondary text |
 | Light Background | `#F8F5F4` | Alternate sections |
-| White | `#FFFFFF` | Cards, backgrounds |
-
-## Responsive Breakpoints
-
-- **Mobile:** < 768px (1 card carousels, hamburger menu)
-- **Tablet:** 768px - 1023px (2 card carousels)
-- **Desktop:** 1024px+ (4 card team carousel, 3 card testimonial carousel, full navigation)
-
-## Deployment
-
-The site is deployed via **GitHub Pages** from the `main` branch.
-
-### To Deploy Updates:
-```bash
-git add .
-git commit -m "Your commit message"
-git push origin main
-```
-
-Changes typically go live within 10-15 seconds.
-
-### Cache Busting
-The stylesheet includes a version parameter (`styles.css?v=33`) to ensure browsers load the latest CSS after updates. When updating CSS, increment the version in **all 9 HTML files**.
 
 ## External Integrations
 
-### Zeffy (Donation Platform)
-- **Donation Form:** Embedded in modal popup on all pages
-- **Golf Registration:** Embedded on golf event page
-- Donation URL: `https://www.zeffy.com/embed/donation-form/partner-with-us-to-see-fruitful-ministries-and-healthy-leaders`
+- **Zeffy** - Donation forms and golf registration
+- **Jotform** - Mission trip registration
+- **Google Fonts** - Inter font family
 
-### Jotform (Registration)
-- **Student Mission Trip:** Embedded on missions page
-- URL: `https://form.jotform.com/251aborgs/registrationmissiontrip2025`
+## SEO
 
-### Google Fonts
-- Font: Inter (weights: 400, 500, 600, 700)
-
-### Social Media
-- **Facebook:** [facebook.com/EnhanceMinistries](https://www.facebook.com/EnhanceMinistries)
-- **Instagram:** [instagram.com/enhanceministries](https://www.instagram.com/enhanceministries/)
-
-## SEO & Search Engine Optimization
-
-The site includes comprehensive SEO features:
-
-### Automated Features (Already Configured)
-- **On-page SEO** - Meta descriptions, keywords, Open Graph tags, Twitter Cards on all pages
-- **Structured Data** - JSON-LD schemas for Organization (home) and Events (golf, missions)
-- **Sitemap** - `sitemap.xml` lists all pages with priorities
-- **Robots.txt** - Allows all search engines and AI crawlers (Google, Bing, GPTBot, Claude-Web, PerplexityBot)
-- **GitHub Actions** - Automatically pings search engines on content changes and weekly
-
-### Manual Setup Required (One-Time)
-
-**IMPORTANT:** If you plan to migrate to a custom domain (e.g., `enhancemin.com`), complete the domain migration FIRST, then do these steps with your final domain.
-
-1. **Google Search Console**
-   - Go to: https://search.google.com/search-console
-   - Add property for your final domain
-   - Verify ownership (HTML file upload or DNS TXT record)
-   - Submit sitemap URL
-
-2. **Bing Webmaster Tools**
-   - Go to: https://www.bing.com/webmasters
-   - Add site for your final domain
-   - Verify ownership
-   - Submit sitemap URL
-
-3. **Optional: Google Analytics**
-   - Create GA4 property at https://analytics.google.com
-   - Add tracking code to `<head>` section of all HTML files
-
-### Custom Domain Migration
-
-When ready to switch from GitHub Pages URL to `enhancemin.com`:
-
-1. **Configure DNS** - Add CNAME record pointing to `hogtai.github.io`
-2. **GitHub Pages Settings** - Add custom domain in repository Settings → Pages
-3. **Update Code** - Replace all `hogtai.github.io/enhance_ministries/` URLs with `enhancemin.com/`:
-   - Canonical URLs in all HTML files
-   - Open Graph and Twitter meta tags
-   - JSON-LD structured data
-   - `sitemap.xml` URLs
-   - `robots.txt` sitemap reference
-   - `.github/workflows/seo-ping.yml` ping URLs
-4. **Complete SEO Setup** - Now do Google Search Console and Bing Webmaster Tools
-
-See [CLAUDE.md](CLAUDE.md) for detailed migration steps.
-
-### Checking Indexing Status
-- Google: Search `site:yourfinalomain.com`
-- Bing: Search `site:yourfinaldomain.com`
-
-## Lighthouse & Security Headers
-
-**Current Lighthouse Scores (Feb 2026):**
-- Performance: 90+
-- Accessibility: 95+
-- Best Practices: 77
-- SEO: 100
-
-### Why Best Practices is 77
-
-The site loses points due to limitations outside our control:
-
-1. **Third-party cookies (71 cookies)** - From the Zeffy donation iframe (Google reCAPTCHA, Stripe, HubSpot, etc.). These are necessary for donation processing and cannot be removed.
-
-2. **Missing security headers** - GitHub Pages doesn't support custom HTTP headers like CSP, COOP, or X-Frame-Options.
-
-### Improving the Score (Optional)
-
-To improve the Best Practices score to 90+, you can add **Cloudflare** (free tier) in front of GitHub Pages to inject security headers at the edge.
-
-See [docs/CLOUDFLARE_SETUP.md](docs/CLOUDFLARE_SETUP.md) for detailed setup instructions.
-
-**Note:** A 77 score is acceptable for a nonprofit site. The third-party cookie warnings will persist even with Cloudflare since they come from Zeffy's legitimate payment and security services.
-
-## Leadership Team
-
-1. **Matt Swigart** - Founder & Executive Director
-2. **Adrianna Frelich** - Marketing Director
-3. **Al Anderstrom** - Board Chair
-4. **C.J. Lloyd** - Treasurer
-5. **Tait Hoglund** - Board Secretary
-
-## Statistics Sources
-
-The "Why Enhance Ministries" section cites research from:
-- Barna Group: [The State of Pastors (2017)](https://www.barna.com/research/pastors-well-being/)
-- Barna Group: [Pastors Share Top Reasons They've Considered Quitting Ministry (2022)](https://www.barna.com/research/pastors-quitting-ministry/)
+- Meta tags, Open Graph, Twitter Cards (via base template)
+- JSON-LD structured data
+- Automated sitemap pings via GitHub Actions
 
 ## Maintaining This Website
 
-This website is designed to be maintained using **Claude Code**, Anthropic's AI coding assistant. See [CLAUDE.md](CLAUDE.md) for detailed instructions on:
+This website is designed to be maintained using **Claude Code**. See [CLAUDE.md](CLAUDE.md) for:
 
-- Setting up Claude Code
-- Making common updates (team members, events, content)
-- Best practices for effective AI-assisted maintenance
-- Troubleshooting tips
-
-**No coding experience required** - simply describe what you want to change in plain English, and Claude will make the updates for you.
-
-## License
-
-This website is proprietary to Enhance Ministries. All rights reserved.
+- Development commands
+- How to update content via data files
+- Adding pages and components
+- Common maintenance tasks
 
 ## Contact
 
