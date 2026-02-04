@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+  eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
   // Add current year shortcode for footer
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
