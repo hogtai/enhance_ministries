@@ -1031,6 +1031,7 @@ h3 { font-size: 1.25rem; }
 
 .team-photo {
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
 .photo-placeholder {
@@ -1718,6 +1719,7 @@ h3 { font-size: 1.25rem; }
     font-weight: 600;
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
+    text-align: center;
 }
 
 .partner-card p {
