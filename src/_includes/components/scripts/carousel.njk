@@ -1,0 +1,18 @@
+// Carousel navigation
+document.querySelectorAll('.team-carousel-wrapper, .testimonial-carousel-wrapper, .services-carousel-wrapper').forEach(wrapper => {
+    const carousel = wrapper.querySelector('.team-carousel, .testimonial-carousel, .services-carousel');
+    const prevBtn = wrapper.querySelector('.carousel-btn-prev');
+    const nextBtn = wrapper.querySelector('.carousel-btn-next');
+
+    if (carousel && prevBtn && nextBtn) {
+        const scrollAmount = 350;
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+});

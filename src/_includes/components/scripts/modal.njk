@@ -1,0 +1,29 @@
+// Donate modal
+const donateModal = document.getElementById('donate-modal');
+const navDonateBtn = document.querySelector('.nav-donate-btn');
+const mobileDonateBtn = document.getElementById('mobile-donate-btn');
+const closeModalBtn = document.querySelector('.modal-close');
+const openDonateBtn = document.getElementById('open-donate-modal');
+
+const openModal = () => {
+    donateModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+};
+
+navDonateBtn.addEventListener('click', openModal);
+if (mobileDonateBtn) mobileDonateBtn.addEventListener('click', openModal);
+if (openDonateBtn) openDonateBtn.addEventListener('click', openModal);
+
+closeModalBtn.addEventListener('click', () => {
+    donateModal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+donateModal.addEventListener('click', (e) => {
+    if (e.target === donateModal) {
+        donateModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});

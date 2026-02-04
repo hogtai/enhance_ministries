@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <meta name="description" content="{{ description or site.tagline }}">
+    <meta name="keywords" content="{{ keywords or 'pastoral coaching, ministry support, pastor care, church consulting, nonprofit ministry' }}">
+    <meta name="author" content="{{ site.name }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ site.url }}{{ canonical or page.url }}">
+
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{{ ogTitle or title }} | {{ site.name }}">
+    <meta property="og:description" content="{{ ogDescription or description or site.tagline }}">
+    <meta property="og:image" content="{{ site.url }}/assets/{{ ogImage or 'logo.png' }}">
+    <meta property="og:site_name" content="{{ site.name }}">
+
+    <meta name="twitter:card" content="{{ twitterCard or 'summary_large_image' }}">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ title }} | {{ site.name }}">
+    <meta name="twitter:description" content="{{ description or site.tagline }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/{{ ogImage or 'logo.png' }}">
+
+    <title>{{ title }}{% if title %} | {% endif %}{{ site.name }}</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    {% block structuredData %}{% endblock %}
+
+    <link rel="stylesheet" href="/styles.css?v={{ site.cssVersion }}">
+
+    {% if preloadHero %}
+    <link rel="preload" as="image" href="/assets/hero-mountain.webp" fetchpriority="high" type="image/webp">
+    {% endif %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include "components/nav.njk" %}
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+    {% include "components/donate-modal.njk" %}
+
+    <script>
+        {% include "components/scripts/nav-toggle.njk" %}
+        {% include "components/scripts/modal.njk" %}
+        {% if hasDropdown %}{% include "components/scripts/dropdown.njk" %}{% endif %}
+        {% if hasSmoothScroll %}{% include "components/scripts/smooth-scroll.njk" %}{% endif %}
+        {% if hasNavScroll %}{% include "components/scripts/nav-scroll.njk" %}{% endif %}
+        {% if hasCarousel %}{% include "components/scripts/carousel.njk" %}{% endif %}
+        {% if hasContactForm %}{% include "components/scripts/contact-form.njk" %}{% endif %}
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+// Dropdown menu for mobile
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+            e.preventDefault();
+            toggle.parentElement.classList.toggle('open');
+        }
+    });
+});
