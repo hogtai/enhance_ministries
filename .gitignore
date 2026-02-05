@@ -21,3 +21,8 @@ Thumbs.db
 
 # Windows crash dumps
 *.stackdump
+
+# Branding files (not part of website)
+branding-guide.html
+generate-pdf.js
+Enhance-Ministries-Brand-Guidelines.pdf
