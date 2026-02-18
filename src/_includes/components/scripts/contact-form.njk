@@ -20,16 +20,49 @@ if (interestSelect) {
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitBtn = document.getElementById('submit-btn');
+const formLoadTime = Date.now();
+
+function showError(msg) {
+    formStatus.className = 'form-status error';
+    formStatus.textContent = msg;
+}
+
+function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (name.length < 2) {
+        showError('Please enter your full name.');
+        return false;
+    }
+
+    if (!emailPattern.test(email)) {
+        showError('Please enter a valid email address.');
+        return false;
+    }
+
+    // Bot detection: form submitted too quickly after page load
+    if (Date.now() - formLoadTime < 3000) {
+        showError('Please wait a moment before submitting.');
+        return false;
+    }
+
+    return true;
+}
 
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+
+        if (!validateForm()) return;
+
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-        formStatus.className = 'form-status';
-        formStatus.textContent = '';
 
         try {
             const formData = new FormData(contactForm);
@@ -45,14 +78,17 @@ if (contactForm) {
                 contactForm.reset();
                 messageGroup.style.display = 'none';
                 messageTextarea.required = false;
+                submitBtn.textContent = 'Sent';
+                submitBtn.disabled = true;
             } else {
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Something went wrong. Please try again or email matt@enhancemin.com directly.';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
         } catch (error) {
             formStatus.className = 'form-status error';
             formStatus.textContent = 'Unable to send message. Please check your connection or email matt@enhancemin.com directly.';
-        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }

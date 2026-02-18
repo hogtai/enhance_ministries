@@ -289,12 +289,12 @@ permalink: /index.html
             </div>
             <form class="contact-form" id="contact-form">
                 <input type="hidden" name="access_key" value="ff5f576c-4d05-466a-af9d-4035f33d4445">
-                <input type="hidden" name="subject" value="New Contact from Enhance Ministries Website">
+                <input type="hidden" name="subject" value="Enhance Ministries Website - New Contact Request Follow Up">
                 <input type="hidden" name="from_name" value="Enhance Ministries Website">
                 <input type="checkbox" name="botcheck" style="display: none;">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" autocomplete="name" required>
+                    <input type="text" id="name" name="name" autocomplete="name" required minlength="2" pattern="[A-Za-z\s\-'.]+">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
