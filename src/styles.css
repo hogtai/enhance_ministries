@@ -2798,21 +2798,21 @@ h3 { font-size: 1.25rem; }
 
 .missions-banner-inner {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-sm) var(--spacing-md);
+    gap: 0.65rem;
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.7rem 0.85rem;
     box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14);
     border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .missions-banner-live {
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 0.4rem;
     background-color: var(--color-primary-accessible);
@@ -2838,10 +2838,20 @@ h3 { font-size: 1.25rem; }
 .missions-banner-copy {
     margin: 0;
     color: var(--color-text);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.35;
     text-align: center;
+}
+
+.missions-banner-copy-full,
+.missions-banner-cta-full {
+    display: none;
+}
+
+.missions-banner-copy-short,
+.missions-banner-cta-short {
+    display: inline;
 }
 
 .missions-banner-copy strong {
@@ -2850,29 +2860,40 @@ h3 { font-size: 1.25rem; }
 }
 
 .missions-banner-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.5rem;
 }
 
 .missions-banner-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-primary-accessible);
     font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem 0.65rem;
+    border: 2px solid var(--color-primary-accessible);
+    border-radius: var(--border-radius);
+    background: transparent;
 }
 
 .missions-banner-more:hover,
 .missions-banner-more:focus-visible {
-    color: #A33800;
+    color: var(--color-white);
+    background-color: var(--color-primary-accessible);
 }
 
 .missions-banner-cta {
-    white-space: normal;
+    width: 100%;
+    white-space: nowrap;
     text-align: center;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.8125rem;
 }
 
 @keyframes missions-banner-enter {
@@ -2901,10 +2922,15 @@ h3 { font-size: 1.25rem; }
 
 @media (min-width: 768px) {
     .missions-banner-inner {
-        padding: 0.75rem 1.25rem;
-        justify-content: space-between;
+        flex-direction: row;
         flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 0.75rem 1.25rem;
         gap: var(--spacing-md);
+    }
+
+    .missions-banner-live {
+        display: inline-flex;
     }
 
     .missions-banner-copy {
@@ -2913,12 +2939,44 @@ h3 { font-size: 1.25rem; }
         font-size: 1rem;
     }
 
+    .missions-banner-copy-full,
+    .missions-banner-cta-full {
+        display: inline;
+    }
+
+    .missions-banner-copy-short,
+    .missions-banner-cta-short {
+        display: none;
+    }
+
     .missions-banner-actions {
+        display: flex;
         flex-shrink: 0;
+        width: auto;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .missions-banner-more {
+        display: inline;
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .missions-banner-more:hover,
+    .missions-banner-more:focus-visible {
+        color: #A33800;
+        background: none;
     }
 
     .missions-banner-cta {
-        white-space: nowrap;
+        width: auto;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875rem;
     }
 }
 
