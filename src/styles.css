@@ -2844,13 +2844,11 @@ h3 { font-size: 1.25rem; }
     text-align: center;
 }
 
-.missions-banner-copy-full,
-.missions-banner-cta-full {
+.missions-banner-copy-full {
     display: none;
 }
 
-.missions-banner-copy-short,
-.missions-banner-cta-short {
+.missions-banner-copy-short {
     display: inline;
 }
 
@@ -2939,13 +2937,11 @@ h3 { font-size: 1.25rem; }
         font-size: 1rem;
     }
 
-    .missions-banner-copy-full,
-    .missions-banner-cta-full {
+    .missions-banner-copy-full {
         display: inline;
     }
 
-    .missions-banner-copy-short,
-    .missions-banner-cta-short {
+    .missions-banner-copy-short {
         display: none;
     }
 
