@@ -2808,7 +2808,8 @@ h3 { font-size: 1.25rem; }
     border-radius: var(--border-radius);
     padding: 0.7rem 0.85rem;
     box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 1.5px solid rgba(197, 69, 0, 0.32);
+    animation: missions-banner-border 3.8s ease-in-out 2.2s infinite;
 }
 
 .missions-banner-live {
@@ -2918,6 +2919,17 @@ h3 { font-size: 1.25rem; }
     }
 }
 
+@keyframes missions-banner-border {
+    0%, 100% {
+        border-color: rgba(197, 69, 0, 0.28);
+        box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14), 0 0 0 0 rgba(255, 122, 61, 0);
+    }
+    50% {
+        border-color: rgba(197, 69, 0, 0.8);
+        box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14), 0 0 0 4px rgba(255, 122, 61, 0.22);
+    }
+}
+
 @media (min-width: 768px) {
     .missions-banner-inner {
         flex-direction: row;
@@ -2978,6 +2990,7 @@ h3 { font-size: 1.25rem; }
 
 @media (prefers-reduced-motion: reduce) {
     .missions-banner,
+    .missions-banner-inner,
     .missions-banner-live-dot {
         animation: none;
     }
