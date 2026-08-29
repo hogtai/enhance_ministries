@@ -2772,6 +2772,163 @@ h3 { font-size: 1.25rem; }
     margin-top: auto;
 }
 
+/* Homepage Missions Registration Banner */
+.hero-with-banner {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: calc(72px + var(--spacing-sm));
+}
+
+.hero-with-banner .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.missions-banner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    z-index: 2;
+    animation: missions-banner-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.missions-banner-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.missions-banner-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--color-primary-accessible);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.missions-banner-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-white);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    animation: missions-banner-pulse 2.2s ease-in-out infinite;
+}
+
+.missions-banner-copy {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.missions-banner-copy strong {
+    color: var(--color-primary-accessible);
+    font-weight: 700;
+}
+
+.missions-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm) var(--spacing-md);
+}
+
+.missions-banner-more {
+    color: var(--color-primary-accessible);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.missions-banner-more:hover,
+.missions-banner-more:focus-visible {
+    color: #A33800;
+}
+
+.missions-banner-cta {
+    white-space: normal;
+    text-align: center;
+}
+
+@keyframes missions-banner-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes missions-banner-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.65);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.9);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .missions-banner-inner {
+        padding: 0.75rem 1.25rem;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: var(--spacing-md);
+    }
+
+    .missions-banner-copy {
+        flex: 1;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .missions-banner-actions {
+        flex-shrink: 0;
+    }
+
+    .missions-banner-cta {
+        white-space: nowrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .missions-banner,
+    .missions-banner-live-dot {
+        animation: none;
+    }
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-left { text-align: left; }

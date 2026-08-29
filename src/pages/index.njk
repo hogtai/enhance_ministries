@@ -49,8 +49,9 @@ permalink: /index.html
 {% endblock %}
 
 <!-- Hero Section -->
-<header class="hero">
+<header class="hero hero-with-banner">
     <img src="assets/hero-mountain.webp" alt="" class="hero-bg-img" width="1920" height="1080" fetchpriority="high">
+    {% include "components/missions-banner.njk" %}
     <div class="container">
         <h1 class="hero-vision">Cultivating Healthy Leaders and Fruitful Ministries</h1>
         <div class="hero-cta">
