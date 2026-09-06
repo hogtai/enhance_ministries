@@ -18,12 +18,14 @@
                     <li><a href="{{ child.url | url }}"{% if child.active %} class="active"{% endif %}>{{ child.text }}</a></li>
                     {% endfor %}
                 </ul>
+                {% elif item.cta %}
+                <a href="{{ item.url | url }}" class="btn btn-primary btn-sm nav-connect-btn">{{ item.text }}</a>
                 {% else %}
                 <a href="{{ item.url | url }}">{{ item.text }}</a>
                 {% endif %}
             </li>
             {% endfor %}
-            <li><button class="btn btn-primary btn-sm nav-donate-btn">Donate</button></li>
+            <li><button class="btn btn-outline btn-sm nav-donate-btn">Donate</button></li>
         </ul>
     </div>
 </nav>

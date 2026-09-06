@@ -38,8 +38,9 @@
       "url": "/#board"
     },
     {
-      "text": "Contact",
-      "url": "/#contact"
+      "text": "Talk with Matt",
+      "url": "/#contact",
+      "cta": true
     }
   ]
 }

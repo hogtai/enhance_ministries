@@ -55,8 +55,8 @@ permalink: /index.html
     <div class="container">
         <h1 class="hero-vision">Cultivating Healthy Leaders and Fruitful Ministries</h1>
         <div class="hero-cta">
+            <a href="#contact" class="btn btn-white btn-lg">Talk with Matt</a>
             <a href="#story" class="btn btn-outline-white btn-lg">Discover Our Story</a>
-            <a href="#donate" class="btn btn-outline-white btn-lg">Support the Mission</a>
         </div>
     </div>
 </header>
@@ -109,6 +109,7 @@ permalink: /index.html
                     </div>
                     <h3>Care Events</h3>
                     <p>Intentional gatherings designed to refresh and restore pastors and their families. Through retreats, connection events, and pastoral care moments, we create space for rest and renewal.</p>
+                    <a href="?interest=care#contact" class="btn btn-primary btn-sm">Plan a Care Event</a>
                 </div>
             </div>
             <button class="carousel-btn carousel-btn-next" aria-label="Next">&rarr;</button>
@@ -156,6 +157,17 @@ permalink: /index.html
             </div>
             <button class="carousel-btn carousel-btn-next" aria-label="Next">&rarr;</button>
             <div class="carousel-hint">Swipe to see more</div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA after social proof -->
+<section class="section section-cta" data-section="home-contact-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pastors shouldn't have to lead alone</h2>
+            <p>Tell Matt what you're navigating. He'll follow up personally.</p>
+            <a href="#contact" class="btn btn-outline-white btn-lg">Talk with Matt</a>
         </div>
     </div>
 </section>
@@ -264,7 +276,7 @@ permalink: /index.html
     <div class="container">
         <div class="section-header">
             <h2>Connect with Matt Directly</h2>
-            <p class="section-subtitle">Fill out with basic information and Matt will follow up with you.</p>
+            <p class="section-subtitle">Share a few details and Matt will follow up with you personally.</p>
         </div>
         <div class="contact-grid">
             <div class="contact-info">
@@ -288,7 +300,8 @@ permalink: /index.html
                 <input type="hidden" name="access_key" value="ff5f576c-4d05-466a-af9d-4035f33d4445">
                 <input type="hidden" name="subject" value="Enhance Ministries Website - New Contact Request Follow Up">
                 <input type="hidden" name="from_name" value="Enhance Ministries Website">
-                <input type="checkbox" name="botcheck" style="display: none;">
+                <input type="hidden" name="lead_source" id="lead-source-field" value="">
+                <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" autocomplete="name" required minlength="2" pattern="[A-Za-z\s\-'.]+">
@@ -299,22 +312,25 @@ permalink: /index.html
                 </div>
                 <div class="form-group">
                     <label for="interest">I am interested in...</label>
-                    <select id="interest" name="interest">
+                    <select id="interest" name="interest" required>
+                        <option value="" selected disabled>Select what you're interested in</option>
                         <option value="booking Matt to speak for an event">booking Matt to speak for my event</option>
                         <option value="an Enhance mission experience">an Enhance mission experience</option>
-                        <option value="recieving coaching / consulting from Matt">recieving coaching / consulting from Matt</option>
+                        <option value="receiving coaching / consulting from Matt">receiving coaching / consulting from Matt</option>
                         <option value="booking Matt to train my team">booking Matt to train my team</option>
                         <option value="becoming a donor of Enhance Ministries">becoming a donor of Enhance Ministries</option>
                         <option value="partnering my ministry with Enhance">partnering my ministry with Enhance</option>
                         <option value="the golf event">the golf event</option>
+                        <option value="sponsoring a care event for pastors">sponsoring a care event for pastors</option>
                         <option value="Other (specify below)">Other (specify below)</option>
                     </select>
                 </div>
-                <div class="form-group" id="message-group" style="display: none;">
-                    <label for="message">Please describe your inquiry</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                <div class="form-group" id="message-group">
+                    <label for="message">How can Matt help? <span class="form-optional">(optional)</span></label>
+                    <textarea id="message" name="message" rows="4" placeholder="Share a little context so Matt can follow up well."></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send Message to Matt</button>
+                <p class="form-reassure">It takes about 30 seconds. Matt reads every message.</p>
                 <div id="form-status" class="form-status"></div>
             </form>
         </div>

@@ -269,6 +269,18 @@ h3 { font-size: 1.25rem; }
     color: var(--color-primary);
 }
 
+.nav-menu .nav-connect-btn {
+    color: var(--color-white);
+}
+
+.nav-menu .nav-connect-btn:hover {
+    color: var(--color-white);
+}
+
+.nav-donate-btn {
+    cursor: pointer;
+}
+
 .nav-toggle {
     display: flex;
     flex-direction: column;
@@ -1274,6 +1286,26 @@ h3 { font-size: 1.25rem; }
     transition: border-color var(--transition);
 }
 
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-optional {
+    color: var(--color-text-light);
+    font-weight: 400;
+}
+
+#message-group.is-required .form-optional {
+    display: none;
+}
+
+.form-reassure {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    text-align: center;
+    margin: 0;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -1296,7 +1328,7 @@ h3 { font-size: 1.25rem; }
 
 @media (max-width: 767px) {
     .footer {
-        padding-bottom: calc(var(--spacing-md) + 70px);
+        padding-bottom: calc(var(--spacing-md) + 80px);
     }
 }
 
@@ -1348,6 +1380,16 @@ h3 { font-size: 1.25rem; }
     opacity: 0.7;
     font-size: 0.7rem;
     font-style: normal;
+}
+
+.footer-connect {
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.footer-connect:hover {
+    color: var(--color-primary);
 }
 
 .footer-bottom {
@@ -1506,35 +1548,26 @@ h3 { font-size: 1.25rem; }
     color: var(--color-white);
 }
 
-/* Fixed Mobile Donate Button */
-.mobile-donate-btn {
-    display: block;
+/* Fixed Mobile Conversion Bar */
+.mobile-cta-bar {
+    display: flex;
+    gap: 0.5rem;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 999;
-    background: var(--color-primary-accessible);
-    color: var(--color-white);
-    border: 2px solid var(--color-white);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(197, 69, 0, 0.4);
-    transition: all var(--transition);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    padding: 0.75rem 1rem;
+    background: var(--color-white);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
 }
 
-.mobile-donate-btn:hover {
-    background: #A33800;
-    box-shadow: 0 6px 20px rgba(197, 69, 0, 0.5);
-    transform: translateY(-2px);
+.mobile-cta-bar .btn {
+    flex: 1;
 }
 
 @media (min-width: 768px) {
-    .mobile-donate-btn {
+    .mobile-cta-bar {
         display: none;
     }
 }

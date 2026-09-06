@@ -40,6 +40,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {% include "components/scripts/analytics.njk" %}
 </head>
 <body>
     {% include "components/nav.njk" %}
@@ -53,6 +55,7 @@
 
     <script>
         {% include "components/scripts/nav-toggle.njk" %}
+        {% include "components/scripts/conversion-track.njk" %}
         {% include "components/scripts/modal.njk" %}
         {% if hasDropdown %}{% include "components/scripts/dropdown.njk" %}{% endif %}
         {% if hasSmoothScroll %}{% include "components/scripts/smooth-scroll.njk" %}{% endif %}

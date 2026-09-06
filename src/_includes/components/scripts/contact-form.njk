@@ -1,30 +1,76 @@
-// Show/hide message field based on interest selection
 const interestSelect = document.getElementById('interest');
 const messageGroup = document.getElementById('message-group');
 const messageTextarea = document.getElementById('message');
+const leadSourceField = document.getElementById('lead-source-field');
+
+const INTEREST_MAP = {
+    speaking: 'booking Matt to speak for an event',
+    missions: 'an Enhance mission experience',
+    coaching: 'receiving coaching / consulting from Matt',
+    consulting: 'receiving coaching / consulting from Matt',
+    training: 'booking Matt to train my team',
+    donor: 'becoming a donor of Enhance Ministries',
+    partner: 'partnering my ministry with Enhance',
+    golf: 'the golf event',
+    care: 'sponsoring a care event for pastors',
+    other: 'Other (specify below)'
+};
+
+function track(eventName, params) {
+    if (typeof window.enhanceTrack === 'function') {
+        window.enhanceTrack(eventName, params);
+    }
+}
+
+function applyInterestFromUrl() {
+    if (!interestSelect) return;
+    const params = new URLSearchParams(window.location.search);
+    const key = (params.get('interest') || '').toLowerCase();
+    if (key && INTEREST_MAP[key]) {
+        interestSelect.value = INTEREST_MAP[key];
+        syncMessageRequirement();
+    }
+}
+
+function syncMessageRequirement() {
+    if (!interestSelect || !messageTextarea) return;
+    const needsMessage = interestSelect.value === 'Other (specify below)';
+    messageTextarea.required = needsMessage;
+    if (messageGroup) {
+        messageGroup.classList.toggle('is-required', needsMessage);
+    }
+}
 
 if (interestSelect) {
+    applyInterestFromUrl();
     interestSelect.addEventListener('change', function() {
-        if (this.value === 'Other (specify below)') {
-            messageGroup.style.display = 'block';
-            messageTextarea.required = true;
-        } else {
-            messageGroup.style.display = 'none';
-            messageTextarea.required = false;
-            messageTextarea.value = '';
-        }
+        syncMessageRequirement();
+        track('form_interest_selected', { interest: this.value });
     });
 }
 
-// Contact form submission via Web3Forms
+try {
+    if (leadSourceField) {
+        const stored = sessionStorage.getItem('em_lead_source');
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            leadSourceField.value = (parsed.source_page || '') + (parsed.cta_text ? ' | ' + parsed.cta_text : '');
+        } else {
+            leadSourceField.value = window.location.pathname;
+        }
+    }
+} catch (err) {}
+
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitBtn = document.getElementById('submit-btn');
 const formLoadTime = Date.now();
+let formStarted = false;
 
 function showError(msg) {
     formStatus.className = 'form-status error';
     formStatus.textContent = msg;
+    track('form_error_contact', { error_message: msg });
 }
 
 function validateForm() {
@@ -42,7 +88,16 @@ function validateForm() {
         return false;
     }
 
-    // Bot detection: form submitted too quickly after page load
+    if (!interestSelect || !interestSelect.value) {
+        showError('Please select what you are interested in.');
+        return false;
+    }
+
+    if (interestSelect.value === 'Other (specify below)' && !messageTextarea.value.trim()) {
+        showError('Please describe your inquiry.');
+        return false;
+    }
+
     if (Date.now() - formLoadTime < 3000) {
         showError('Please wait a moment before submitting.');
         return false;
@@ -52,6 +107,14 @@ function validateForm() {
 }
 
 if (contactForm) {
+    contactForm.addEventListener('focusin', function() {
+        if (formStarted) return;
+        formStarted = true;
+        track('form_start_contact', {
+            interest: interestSelect ? interestSelect.value : ''
+        });
+    });
+
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -73,22 +136,32 @@ if (contactForm) {
             const data = await response.json();
 
             if (data.success) {
+                const interest = interestSelect ? interestSelect.value : '';
+                track('form_submit_contact', { interest: interest });
+                track('generate_lead', {
+                    interest: interest,
+                    currency: 'USD',
+                    value: 1
+                });
                 formStatus.className = 'form-status success';
                 formStatus.textContent = 'Message sent! Matt will follow up with you soon.';
                 contactForm.reset();
-                messageGroup.style.display = 'none';
                 messageTextarea.required = false;
+                if (messageGroup) messageGroup.classList.remove('is-required');
                 submitBtn.textContent = 'Sent';
                 submitBtn.disabled = true;
+                try { sessionStorage.removeItem('em_lead_source'); } catch (err) {}
             } else {
                 formStatus.className = 'form-status error';
                 formStatus.textContent = 'Something went wrong. Please try again or email matt@enhancemin.com directly.';
+                track('form_error_contact', { error_message: 'web3forms_rejected' });
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
         } catch (error) {
             formStatus.className = 'form-status error';
             formStatus.textContent = 'Unable to send message. Please check your connection or email matt@enhancemin.com directly.';
+            track('form_error_contact', { error_message: 'network_error' });
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }

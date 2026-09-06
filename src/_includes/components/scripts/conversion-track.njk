@@ -1,0 +1,30 @@
+(function() {
+    function track(eventName, params) {
+        if (typeof window.enhanceTrack === 'function') {
+            window.enhanceTrack(eventName, params);
+        }
+    }
+
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href]');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const isContactCta = href.indexOf('#contact') !== -1 || href.indexOf('/connect') !== -1;
+
+        if (isContactCta) {
+            try {
+                sessionStorage.setItem('em_lead_source', JSON.stringify({
+                    source_page: window.location.pathname,
+                    cta_text: (link.textContent || '').trim().slice(0, 80),
+                    captured_at: Date.now()
+                }));
+            } catch (err) {}
+
+            track('cta_click', {
+                link_url: href,
+                link_text: (link.textContent || '').trim().slice(0, 80)
+            });
+        }
+    }, true);
+})();
