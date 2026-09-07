@@ -19,6 +19,6 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    pathPrefix: "/enhance_ministries/"
+    pathPrefix: process.env.ELEVENTY_LOCAL === "1" ? "/" : "/enhance_ministries/"
   };
 };

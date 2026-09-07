@@ -8,7 +8,6 @@ canonical: "/"
 heroPreload: "assets/hero-mountain.webp"
 hasSmoothScroll: true
 hasCarousel: true
-hasContactForm: true
 hasDropdown: true
 permalink: /index.html
 ---
@@ -55,7 +54,7 @@ permalink: /index.html
     <div class="container">
         <h1 class="hero-vision">Cultivating Healthy Leaders and Fruitful Ministries</h1>
         <div class="hero-cta">
-            <a href="#contact" class="btn btn-white btn-lg">Talk with Matt</a>
+            <a href="{{ '/connect/' | url }}" class="btn btn-white btn-lg">Talk with Matt</a>
             <a href="#story" class="btn btn-outline-white btn-lg">Discover Our Story</a>
         </div>
     </div>
@@ -109,7 +108,7 @@ permalink: /index.html
                     </div>
                     <h3>Care Events</h3>
                     <p>Intentional gatherings designed to refresh and restore pastors and their families. Through retreats, connection events, and pastoral care moments, we create space for rest and renewal.</p>
-                    <a href="?interest=care#contact" class="btn btn-primary btn-sm">Plan a Care Event</a>
+                    <a href="{{ '/connect/' | url }}?interest=care" class="btn btn-primary btn-sm">Plan a Care Event</a>
                 </div>
             </div>
             <button class="carousel-btn carousel-btn-next" aria-label="Next">&rarr;</button>
@@ -167,7 +166,7 @@ permalink: /index.html
         <div class="cta-content">
             <h2>Pastors shouldn't have to lead alone</h2>
             <p>Tell Matt what you're navigating. He'll follow up personally.</p>
-            <a href="#contact" class="btn btn-outline-white btn-lg">Talk with Matt</a>
+            <a href="{{ '/connect/' | url }}" class="btn btn-outline-white btn-lg">Talk with Matt</a>
         </div>
     </div>
 </section>
@@ -272,67 +271,14 @@ permalink: /index.html
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section">
+<section id="contact" class="section" data-section="home-contact-cta">
     <div class="container">
         <div class="section-header">
             <h2>Connect with Matt Directly</h2>
             <p class="section-subtitle">Share a few details and Matt will follow up with you personally.</p>
         </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Location</h3>
-                    <p>Woodbury, MN</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/EnhanceMinistries" target="_blank" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="https://www.instagram.com/enhanceministries/" target="_blank" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <form class="contact-form" id="contact-form">
-                <input type="hidden" name="access_key" value="ff5f576c-4d05-466a-af9d-4035f33d4445">
-                <input type="hidden" name="subject" value="Enhance Ministries Website - New Contact Request Follow Up">
-                <input type="hidden" name="from_name" value="Enhance Ministries Website">
-                <input type="hidden" name="lead_source" id="lead-source-field" value="">
-                <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" autocomplete="name" required minlength="2" pattern="[A-Za-z\s\-'.]+">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="interest">I am interested in...</label>
-                    <select id="interest" name="interest" required>
-                        <option value="" selected disabled>Select what you're interested in</option>
-                        <option value="booking Matt to speak for an event">booking Matt to speak for my event</option>
-                        <option value="an Enhance mission experience">an Enhance mission experience</option>
-                        <option value="receiving coaching / consulting from Matt">receiving coaching / consulting from Matt</option>
-                        <option value="booking Matt to train my team">booking Matt to train my team</option>
-                        <option value="becoming a donor of Enhance Ministries">becoming a donor of Enhance Ministries</option>
-                        <option value="partnering my ministry with Enhance">partnering my ministry with Enhance</option>
-                        <option value="the golf event">the golf event</option>
-                        <option value="sponsoring a care event for pastors">sponsoring a care event for pastors</option>
-                        <option value="Other (specify below)">Other (specify below)</option>
-                    </select>
-                </div>
-                <div class="form-group" id="message-group">
-                    <label for="message">How can Matt help? <span class="form-optional">(optional)</span></label>
-                    <textarea id="message" name="message" rows="4" placeholder="Share a little context so Matt can follow up well."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send Message to Matt</button>
-                <p class="form-reassure">It takes about 30 seconds. Matt reads every message.</p>
-                <div id="form-status" class="form-status"></div>
-            </form>
+        <div style="text-align: center;">
+            <a href="{{ '/connect/' | url }}" class="btn btn-primary btn-lg">Talk with Matt</a>
         </div>
     </div>
 </section>

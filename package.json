@@ -4,8 +4,8 @@
   "description": "Static website for Enhance Ministries",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve"
+    "serve": "ELEVENTY_LOCAL=1 eleventy --serve",
+    "start": "ELEVENTY_LOCAL=1 eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

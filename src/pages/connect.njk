@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Connect with Matt
+navStyle: solid
+description: "Talk with Matt Swigart about pastoral coaching, consulting, speaking, training, or an Enhance mission experience. Share a few details and he will follow up personally."
+keywords: "contact Enhance Ministries, pastoral coaching, book Matt Swigart, ministry consulting, mission trip, pastor coach"
+canonical: "/connect/"
+hasContactForm: true
+hasDropdown: true
+permalink: /connect/index.html
+---
+
+{% block structuredData %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Connect with Matt",
+    "description": "Talk with Matt Swigart about coaching, consulting, speaking, or mission experiences.",
+    "url": "{{ site.url }}{{ canonical }}"
+}
+</script>
+{% endblock %}
+
+<header class="coaching-hero">
+    <div class="container">
+        <span class="event-badge">Start a Conversation</span>
+        <h1>Talk with Matt</h1>
+        <p class="coaching-hero-text">Coaching, consulting, speaking, or a mission experience — tell Matt what you need. He reads every message and follows up personally.</p>
+    </div>
+</header>
+
+<section id="contact" class="section" data-section="connect-form">
+    <div class="container connect-form-wrap">
+        {% include "components/contact-form-fields.njk" %}
+    </div>
+</section>

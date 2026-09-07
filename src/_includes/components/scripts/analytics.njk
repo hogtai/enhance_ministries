@@ -2,7 +2,7 @@
 <script>
 (function() {
     var host = window.location.hostname;
-    if (host === 'localhost' || host === '127.0.0.1') return;
+    if (host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || host.indexOf('netlify.app') !== -1) return;
 
     {% if site.ga4Id %}
     var gaScript = document.createElement('script');

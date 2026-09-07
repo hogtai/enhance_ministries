@@ -1319,6 +1319,11 @@ h3 { font-size: 1.25rem; }
     }
 }
 
+.connect-form-wrap {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
 /* Footer - Compact Two-Line Design */
 .footer {
     background-color: var(--color-text);
